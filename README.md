@@ -33,7 +33,7 @@ NTE|1||Additional comments or notes regarding the test results.
 ## Sample Output
 
 <p align="center">
-<img src="https://www.htmlhints.com/image/react/reactWeatherApp.png" width="100%">
+<img src="https://github.com/Akash-Chowdhury/E-Hospital-LIS-Report-Generator/blob/main/output_file.png" width="100%">
 </p>
 
 ## Prerequisites
