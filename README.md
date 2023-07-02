@@ -43,7 +43,7 @@ To run the eHospital LIS Report Generator API, ensure that you have the followin
 Follow the steps below to set up and run the eHospital LIS Report Generator API:
 
 1. Clone the repository:
-`https://github.com/Akash-Chowdhury/HL7-TO-PDF`
+`https://github.com/Akash-Chowdhury/E-Hospital-LIS-Report-Generator.git`
 2. Navigate to the project directory:
 `cd E-Hospital-LIS-Report-Generator`
 3. Build the project using Maven:
