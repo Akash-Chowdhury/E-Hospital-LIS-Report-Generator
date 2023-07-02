@@ -98,7 +98,7 @@ public class OruMessageController {
             String FirstName = terser.get("/.PID-5-1");
             String LastName = terser.get("/.PID-5-2");
             String DOB = terser.get("/.PID-7");
-            String Address = terser.get("/.PID-11-1")+","+terser.get("/.PID-11-2")+","+terser.get("/.PID-11-3")+","+terser.get("/.PID-11-4")+","+terser.get("/.PID-11-5") + "," + terser.get("/.PID-11-6");
+            String Address = terser.get("/.PID-11-1")+","+terser.get("/.PID-11-2");
             String Sex =  terser.get("/.PID-8");
             String PhoneNo= terser.get("/.PID-13");
             String PaitentAccountNumber = terser.get("/.PID-18");
@@ -110,9 +110,10 @@ public class OruMessageController {
             c_time = c_time.substring(8, 10) + ":" + c_time.substring(10, 12) + ", " + c_time.substring(6,8) + "/" + c_time.substring(4,6)+ "/" + c_time.substring(0,4);
             String r_time =  terser.get("/.OBR-14");
             r_time = r_time.substring(8, 10) + ":" + r_time.substring(10, 12) + ", " + r_time.substring(6,8) + "/" + r_time.substring(4,6)+ "/" + r_time.substring(0,4);
-            String result_status = terser.get("/.OBR-25");
+            String labid = terser.get("/.OBR-2");
+            String hospitalid = terser.get("/.OBR-3");
             
-            // OBS segment
+            // OBS segment WBC
             
             int cnt = 0;
             
@@ -124,6 +125,31 @@ public class OruMessageController {
             String reference_range = terser.get(key + "/OBX-7"); 
             String Conclusion = terser.get(key + "/OBX-8");
            // String obs_res_stats = terser.get(key + "/OBX-11");
+            
+            // OBS segment  Hemoglobin
+            
+            int cntHemo = 1;
+            
+            String key1 = "/.OBSERVATION(" + cntHemo +")";
+            
+            String composition_description1 = terser.get(key1 + "/OBX-3-2");
+            String observation_val1 = terser.get(key1 + "/OBX-5");
+            String observation_unit1 = terser.get(key1 + "/OBX-6");
+            String reference_range1 = terser.get(key1 + "/OBX-7"); 
+            String Conclusion1 = terser.get(key1 + "/OBX-8");
+            
+            int cntHemo2 = 2;
+            
+            String key2 = "/.OBSERVATION(" + cntHemo2 +")";
+            
+            String composition_description2 = terser.get(key2 + "/OBX-3-2");
+            String observation_val2 = terser.get(key2 + "/OBX-5");
+            String observation_unit2 = terser.get(key2 + "/OBX-6");
+            String reference_range2 = terser.get(key2 + "/OBX-7"); 
+            String Conclusion2 = terser.get(key2 + "/OBX-8");
+
+
+            
 
             // Generate the PDF document
             
@@ -139,6 +165,8 @@ public class OruMessageController {
     		fontTitle.setSize(20);
     		Font fontTitle_1 = FontFactory.getFont(FontFactory.TIMES_BOLD);
     		fontTitle_1.setSize(10);
+    		Font font_low = FontFactory.getFont(FontFactory.TIMES_BOLD);
+    		font_low.setSize(10);
     		Paragraph pgrp1 = new Paragraph("Agartala Government Medical College Hospital", fontTitle);
     		pgrp1.setAlignment(Paragraph.ALIGN_CENTER);
     		
@@ -163,11 +191,13 @@ public class OruMessageController {
             document.add(new Paragraph("_____________________________________________________________________________ " , font));
             
             document.add(new Paragraph("Description: " + desc, font));
+            document.add(new Paragraph("Hospital Id : " + hospitalid, font));
+            document.add(new Paragraph("Lab Id : " + labid, font));
             document.add(new Paragraph("Collect Time : " +  c_time, font));
             document.add(new Paragraph("Result Time : " + r_time, font));
-            document.add(new Paragraph("Result Status : " + result_status, font));
+           
             
-            document.add(new Paragraph("___________________________________________________ " , font));
+            document.add(new Paragraph("____________________________________________________________________________"));
             
             document.add(new Paragraph("Composition_Description: " + composition_description, font));
             document.add(new Paragraph("Observation_Value : " + observation_val, font));
@@ -175,6 +205,26 @@ public class OruMessageController {
             document.add(new Paragraph("Reference_Range : " + reference_range, font));
             document.add(new Paragraph("Conclusion : " + Conclusion, font));
             
+            document.add(new Paragraph("____________________________________________________________________________"));
+            
+            document.add(new Paragraph("Composition_Description: " + composition_description1, font));
+            document.add(new Paragraph("Observation_Value : " + observation_val1, font));
+            document.add(new Paragraph("Observation_Unit : " + observation_unit1, font));
+            document.add(new Paragraph("Reference_Range : " + reference_range1, font));
+            document.add(new Paragraph("Conclusion : " + Conclusion1, font));
+            
+            document.add(new Paragraph("____________________________________________________________________________"));
+            
+            document.add(new Paragraph("Composition_Description: " + composition_description2, font));
+            document.add(new Paragraph("Observation_Value : " + observation_val2, font));
+            document.add(new Paragraph("Observation_Unit : " + observation_unit2, font));
+            document.add(new Paragraph("Reference_Range : " + reference_range2, font));
+            document.add(new Paragraph("Conclusion : " + Conclusion2, font));
+            document.add(new Paragraph("____________________________________________________________________________"));
+            
+            document.add(new Paragraph(" "));
+            
+            document.add(new Paragraph("#This is computer generated report, here no signarure required. It is verified by Hospital admin", font_low));
  
             document.close();
 
