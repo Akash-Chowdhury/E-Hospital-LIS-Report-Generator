@@ -20,7 +20,7 @@ Health Level Seven (HL7) is the standard that ensures data consistency across di
 Sample HL7 Message:
 
 `MSH|^~\&|SendingApp|SendingFacility|ReceivingApp|ReceivingFacility|20230620120000||ORU^R01|MSG001|P|2.3
-PID|1|54321|12345^^^HospitalID||Santanu^Rakshit||20010507|M|||Agartala^799002||(555)555-5555||S||123456789|98765432
+PID|1|54321|12345^^^HospitalID||Akash^Chowdhury||20010507|M|||Agartala^799002||(555)555-5555||S||123456789|98765432
 OBR|1|1234567^^^HospitalID|9876543^^^LabID|CBC^Complete Blood Count|R||20230620110000||||PhysicianID^Doe^John^^Dr.^^^|||20230620120000
 OBX|1|NM|WBC^White Blood Cell Count^LN||6.7|10.3/uL|4.5-11.0|N|||F
 OBX|2|NM|RBC^Red Blood Cell Count^LN||5.2|10.6 mg/dL|4.7-6.1|N|||F
