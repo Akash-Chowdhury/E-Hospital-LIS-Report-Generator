@@ -30,6 +30,12 @@ OBX|5|NM|PLT^Platelet Count^LN||250|10^3/uL|150-450|N|||F
 NTE|1||Additional comments or notes regarding the test results.
 `
 
+## Sample Output
+
+<p align="center">
+<img src="https://www.htmlhints.com/image/react/reactWeatherApp.png" width="100%">
+</p>
+
 ## Prerequisites
 
 To run the eHospital LIS Report Generator API, ensure that you have the following installed:
