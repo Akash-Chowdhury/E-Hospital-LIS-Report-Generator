@@ -1,5 +1,7 @@
 
- # E-Hospital LIS (Laboratory Information System) Report Generator
+ # The project titled “Electronic health records (EHR), Diagnostic Report Interoperability” 
+
+`Certificate`
 
 
 E-Hospital LIS Report Generator is a microservice API written in Java using the Spring Boot framework. This API allows you to convert HL7 (Health Level 7) messages into PDF reports. It provides an efficient and scalable solution for generating reports from HL7 messages, which are commonly used for exchanging medical information between different healthcare systems.
